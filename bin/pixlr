@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+
+require 'thor'
+require 'pixlr'
+
+module Pixlr
+  class CLI < Thor
+    desc "google_images [KEYWORD]", "scrape images from Google Images"
+    method_option :safe, type: :boolean, default: true, description: "use safe search?"
+    method_option :size, default: "any", description: "size of the images to search for"
+    method_option :ref, type: :boolean, default: false, description: "provide a list of reference urls, instead"
+    method_option :verbose, type: :boolean, default: false, description: "provide all info", alias: "-v"
+    method_option :total, default: 100, description: "number of images to search", aliases: "-n"
+    def google_images(keyword)
+      scraper = Pixlr::GoogleImages.new keyword, options
+      scraper.total = options["total"].to_i
+      images = scraper.find
+      if images.empty?
+        puts "No images were found! :("
+      else
+        puts "URL, WIDTH, HEIGHT, REFERENCE_URL" if options["verbose"]
+        images.each do |hash, image|
+          if options["verbose"]
+            puts "#{image[:url]},#{image[:width]},#{image[:height]},#{image[:reference_url]}"
+          else
+            puts options["ref"] ? image[:reference_url] : image[:url]
+          end
+        end
+      end
+    end
+  end
+end
+
+Pixlr::CLI.start
