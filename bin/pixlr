@@ -20,7 +20,7 @@ module Pixlr
         puts "No images were found! :("
       else
         puts "URL, WIDTH, HEIGHT, REFERENCE_URL" if options["verbose"]
-        images.each do |hash, image|
+        images.each do |image|
           if options["verbose"]
             puts "#{image[:url]},#{image[:width]},#{image[:height]},#{image[:reference_url]}"
           else
