@@ -23,34 +23,34 @@ Or install it yourself as:
 
 To use the Google Images Scraper inside your ruby applications, simply do:
 
-  scraper = Pixlr::GoogleImages.new # create the scraper
+    scraper = Pixlr::GoogleImages.new # create the scraper
   
-  scraper.query = "programmer"      # find images for keyword: "programmer"
-  scraper.total = 30                # search is limited to 30 images (default: 100)
-  scraper.find                      # return a list of such images
+    scraper.query = "programmer"      # find images for keyword: "programmer"
+    scraper.total = 30                # search is limited to 30 images (default: 100)
+    scraper.find                      # return a list of such images
 
-  # search for 'large' images, and put safesearch to off!
-  scraper.options = { safe: false, size: "large" }
-  scraper.find
+    # search for 'large' images, and put safesearch to off!
+    scraper.options = { safe: false, size: "large" }
+    scraper.find
   
-  # everything:
-  scraper = Pixlr::GoogleImages.new "programmer", safe: false, size: "large"
-  scraper.total = 30 # limits to 30 images - default: 100 images
-  scraper.find
+    # everything:
+    scraper = Pixlr::GoogleImages.new "programmer", safe: false, size: "large"
+    scraper.total = 30 # limits to 30 images - default: 100 images
+    scraper.find
   
   
 The `size` option can be supplied in following ways:
 
-  - *icon*, *small*, *medium*, or *large*
-  - *<n>*: searches for images with exact dimensions (width: _m_, height: _n_)
-  - *<m>x<n>*: searches for images with exact dimensions (width: _m_, height: _n_)
-  - *<n>mp*: searches for images larger than <n> MP. Intelligently, adjusts to
-  the closest available option, if <n> is not in the supported list of sizes
+  - __icon__, __small__, __medium__, or __large__
+  - __&lt;n&gt;__: searches for images with exact dimensions (width: _&lt;m&gt;_, height: _&lt;n&gt;_)
+  - __&lt;m&gt;x&lt;n&gt;__: searches for images with exact dimensions (width: _&lt;m&gt;_, height: _&lt;n&gt;_)
+  - __&lt;n&gt;mp__: searches for images larger than _&lt;n&gt;_ MP. Intelligently, adjusts to
+  the closest available option, if _&lt;n&gt;_ is not in the supported list of sizes
   for this search.
   
 You can also use the scraper on CLI:
 
-  pixlr google_images "programmer" --no-safe --total=30 --size=large
+    pixlr google_images "programmer" --no-safe --total=30 --size=large
 
 ## Contributing
 
