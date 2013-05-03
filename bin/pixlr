@@ -29,6 +29,17 @@ module Pixlr
         end
       end
     end
+
+    desc "vbulletin [THREAD_URL]", "scrape images from a vBulletin Thread"
+    method_option :total, default: 100000, description: "number of images to search", aliases: "-n"
+    method_option :start, default: 1, description: "starting page number"
+    method_option :end, default: 10000, description: "ending page number"
+    method_option :verbose, type: :boolean, default: false, description: "be verbose", alias: "-v"
+    def vbulletin(thread_url)
+      scraper = Pixlr::VBulletin.new thread_url, options.merge({"cli" => true})
+      images = scraper.find
+      puts "No images were found! :(" if images.empty?
+    end
   end
 end
 

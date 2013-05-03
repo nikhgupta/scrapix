@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Pixlr::VERSION
   spec.authors       = ["Nikhil Gupta"]
   spec.email         = ["me@nikhgupta.com"]
-  spec.description   = %q{Scrapes images from Google Images using Capybara and Poltergeist.}
-  spec.summary       = %q{A gem that is able to search for keywords on Google Images and use Capybara and Poltergeist driver to scrape those images. The gem provides you with the results of these searches in a neat way.}
+  spec.description   = %q{Scrapes images from various sources e.g. Google Images, vBulleting threads, etc.}
+  spec.summary       = %q{A gem that is able to scrape images from various sources. The gem provides you with the results of these searches in a neat way, which you can then use to download these images.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "thor"
   spec.add_dependency "capybara"
-  spec.add_dependency "fastimage"
+  spec.add_dependency "mechanize"
   spec.add_dependency "poltergeist"
 
   spec.add_development_dependency "pry"

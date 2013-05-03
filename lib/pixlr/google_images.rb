@@ -43,6 +43,7 @@ module Pixlr
     def find(page_no = 1)
       images = {}
       return images unless @query
+
       while images.count < @num
         visit search_url(page_no)
         links = Capybara.page.all("a")
