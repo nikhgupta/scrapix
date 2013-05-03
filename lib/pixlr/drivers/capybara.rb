@@ -12,6 +12,7 @@ Capybara.register_driver :poltergeist_debug do |app|
   }
 end
 
+# use javascript driver
 Capybara.current_driver = :poltergeist_debug
 
 Pixlr::UserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) " +

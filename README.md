@@ -19,9 +19,10 @@ Or install it yourself as:
 
     $ gem install pixlr
 
-## Usage
+## Usage :: Google Images
 
-To use the Google Images Scraper inside your ruby applications, simply do:
+This gem is able to scrape images from Google Images search.  
+To use the `Google Images Scraper` inside your ruby applications, simply do:
 
     scraper = Pixlr::GoogleImages.new # create the scraper
   
@@ -51,6 +52,30 @@ The `size` option can be supplied in following ways:
 You can also use the scraper on CLI:
 
     pixlr google_images "programmer" --no-safe --total=30 --size=large
+
+## Usage :: vBulletin Threads
+
+This gem is able to scrape vBulletin threads for images.  
+To use the `vBulletin Thread Scraper` inside your ruby applications, simply do:
+
+    scraper = Pixlr::VBulletin.new # create the scraper
+  
+    # find images for the following thread
+    scraper.url = "http://www.wetacollectors.com/forum/showthread.php?t=40085"
+    scraper.find     # return a list of such images
+
+    # start searching from page 2 of this thread till we find 10 images
+    scraper.options = { start: 2, total: 10 }
+    scraper.find
+  
+    # everything:
+    url = "http://www.wetacollectors.com/forum/showthread.php?t=40085"
+    scraper = Pixlr::GoogleImages.new url, start: 2, end: 3, total: 10
+    scraper.find
+  
+You can also use the scraper on CLI:
+
+    pixlr vbulletin "http://www.wetacollectors.com/forum/showthread.php?t=40085" --total=10 --start=2
 
 ## Contributing
 
