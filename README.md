@@ -1,9 +1,10 @@
 # Pixlr
 
 A gem that is able to scrape images from various sources. The gem provides you with the
-results of these searches in a neat way, which you can then use to download these images.
-Otherwise, you can easily use the API to call these scraping methods inside your own
-applications.
+results of these searches in a neat way, which you can then use to download these images,
+or simply obtain a list of such images.
+
+You can, also, use the API to call these scraping methods inside your own applications.
 
 ## Installation
 
