@@ -70,7 +70,7 @@ To use the `vBulletin Thread Scraper` inside your ruby applications, simply do:
   
     # everything:
     url = "http://www.wetacollectors.com/forum/showthread.php?t=40085"
-    scraper = Pixlr::GoogleImages.new url, start: 2, end: 3, total: 10
+    scraper = Pixlr::VBulletin.new url, start: 2, end: 3, total: 10
     scraper.find
   
 You can also use the scraper on CLI:
