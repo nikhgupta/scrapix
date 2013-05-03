@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Pixlr::VERSION
   spec.authors       = ["Nikhil Gupta"]
   spec.email         = ["me@nikhgupta.com"]
-  spec.description   = %q{Scrapes images from various sources e.g. Google Images, vBulleting threads, etc.}
+  spec.description   = %q{Scrapes images from various sources e.g. Google Images, vBulletin threads, etc.}
   spec.summary       = %q{A gem that is able to scrape images from various sources. The gem provides you with the results of these searches in a neat way, which you can then use to download these images.}
-  spec.homepage      = ""
+  spec.homepage      = "http://github.com/nikhgupta/pixlr"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
