@@ -1,10 +1,11 @@
 # Scrapix
 
-A gem that is able to scrape images from various sources. The gem provides you with the
-results of these searches in a neat way, which you can then use to download these images,
-or simply obtain a list of such images.
+A gem that is able to scrape images from various sources. The gem provides you
+with the results of these searches in a neat way, which you can then use to
+download these images, or simply obtain a list of such images.
 
-You can, also, use the API to call these scraping methods inside your own applications.
+You can, also, use the API to call these scraping methods inside your own
+applications.
 
 ## Installation
 
@@ -22,8 +23,10 @@ Or install it yourself as:
 
 ## Usage :: Google Images
 
-This gem is able to scrape images from Google Images search. It uses `Capybara` along with the
-`Poltergeist` driver (which works on top of `PhantomJS`) for this purpose.
+This gem is able to scrape images from Google Images search. It uses
+`Capybara` along with the `Poltergeist` driver (which works on top of
+`PhantomJS`) for this purpose, as `mechanize` is unable to parse the
+javascript for search results.
 
 To use the `Google Images Scraper` inside your ruby applications, simply do:
 
@@ -88,7 +91,3 @@ You can also use the scraper on CLI:
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
-
-## TODO
-
-1. Check if `mechanize` can be used instead of `capybara + poltergeist` combination for scraping Google Images.
