@@ -1,4 +1,4 @@
-module Pixlr
+module Scrapix
   # download images from a vBulletin thread
   class VBulletin
 

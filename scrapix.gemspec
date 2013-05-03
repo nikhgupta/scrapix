@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'pixlr/version'
+require 'scrapix/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "pixlr"
-  spec.version       = Pixlr::VERSION
+  spec.name          = "scrapix"
+  spec.version       = Scrapix::VERSION
   spec.authors       = ["Nikhil Gupta"]
   spec.email         = ["me@nikhgupta.com"]
   spec.description   = %q{Scrapes images from various sources e.g. Google Images, vBulletin threads, etc.}
   spec.summary       = %q{A gem that is able to scrape images from various sources. The gem provides you with the results of these searches in a neat way, which you can then use to download these images.}
-  spec.homepage      = "http://github.com/nikhgupta/pixlr"
+  spec.homepage      = "http://github.com/nikhgupta/scrapix"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)

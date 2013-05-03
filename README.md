@@ -1,4 +1,4 @@
-# Pixlr
+# Scrapix
 
 A gem that is able to scrape images from various sources. The gem provides you with the
 results of these searches in a neat way, which you can then use to download these images,
@@ -10,7 +10,7 @@ You can, also, use the API to call these scraping methods inside your own applic
 
 Add this line to your application's Gemfile:
 
-    gem 'pixlr'
+    gem 'scrapix'
 
 And then execute:
 
@@ -18,7 +18,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install pixlr
+    $ gem install scrapix
 
 ## Usage :: Google Images
 
@@ -27,7 +27,7 @@ This gem is able to scrape images from Google Images search. It uses `Capybara` 
 
 To use the `Google Images Scraper` inside your ruby applications, simply do:
 
-    scraper = Pixlr::GoogleImages.new # create the scraper
+    scraper = Scrapix::GoogleImages.new # create the scraper
   
     scraper.query = "programmer"      # find images for keyword: "programmer"
     scraper.total = 30                # search is limited to 30 images (default: 100)
@@ -38,7 +38,7 @@ To use the `Google Images Scraper` inside your ruby applications, simply do:
     scraper.find
   
     # everything:
-    scraper = Pixlr::GoogleImages.new "programmer", safe: false, size: "large"
+    scraper = Scrapix::GoogleImages.new "programmer", safe: false, size: "large"
     scraper.total = 30 # limits to 30 images - default: 100 images
     scraper.find
   
@@ -54,7 +54,7 @@ The `size` option can be supplied in following ways:
   
 You can also use the scraper on CLI:
 
-    pixlr google_images "programmer" --no-safe --total=30 --size=large
+    scrapix google_images "programmer" --no-safe --total=30 --size=large
 
 ## Usage :: vBulletin Threads
 
@@ -62,7 +62,7 @@ This gem is able to scrape vBulletin threads for images. It uses `Mechanize` gem
 
 To use the `vBulletin Thread Scraper` inside your ruby applications, simply do:
 
-    scraper = Pixlr::VBulletin.new # create the scraper
+    scraper = Scrapix::VBulletin.new # create the scraper
   
     # find images for the following thread
     scraper.url = "http://www.wetacollectors.com/forum/showthread.php?t=40085"
@@ -74,12 +74,12 @@ To use the `vBulletin Thread Scraper` inside your ruby applications, simply do:
   
     # everything:
     url = "http://www.wetacollectors.com/forum/showthread.php?t=40085"
-    scraper = Pixlr::VBulletin.new url, start: 2, end: 3, total: 10
+    scraper = Scrapix::VBulletin.new url, start: 2, end: 3, total: 10
     scraper.find
   
 You can also use the scraper on CLI:
 
-    pixlr vbulletin "http://www.wetacollectors.com/forum/showthread.php?t=40085" --total=10 --start=2
+    scrapix vbulletin "http://www.wetacollectors.com/forum/showthread.php?t=40085" --total=10 --start=2
 
 ## Contributing
 

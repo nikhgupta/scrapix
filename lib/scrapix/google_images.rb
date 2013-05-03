@@ -1,4 +1,4 @@
-module Pixlr
+module Scrapix
   # download images from a Google Image Search
   class GoogleImages
     include Capybara::DSL
