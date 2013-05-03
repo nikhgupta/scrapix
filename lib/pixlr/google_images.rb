@@ -36,7 +36,7 @@ module Pixlr
       sanitize_size
 
       # parametrize for url purposes
-      @params = create_params(@options)
+      @params = create_params
     end
 
     # params: page_no => starting page number for google results
@@ -103,10 +103,11 @@ module Pixlr
                          end
     end
 
-    def create_params(options)
+    def create_params
       string  = ""
-      string += "&tbs=#{options["size"]}" if options["size"]
-      string += "&safe=off" unless options["safe"]
+      string += "&tbs=#{@options["size"]}" if @options["size"]
+      string += "&safe=off" unless @options["safe"]
+      string
     end
   end
 end
