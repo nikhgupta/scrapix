@@ -20,6 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "thor"
   spec.add_dependency "capybara"
+  spec.add_dependency "fastimage"
   spec.add_dependency "poltergeist"
 
   spec.add_development_dependency "pry"

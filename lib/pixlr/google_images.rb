@@ -1,4 +1,5 @@
 module Pixlr
+  # download images from a Google Image Search
   class GoogleImages
     include Capybara::DSL
 
