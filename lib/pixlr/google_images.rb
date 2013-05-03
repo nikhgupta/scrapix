@@ -18,7 +18,7 @@ module Pixlr
     end
 
     def query=(q)
-      @query = URI.escape(q)
+      @query = URI.escape(q) if q
     end
 
     def total=(n)
